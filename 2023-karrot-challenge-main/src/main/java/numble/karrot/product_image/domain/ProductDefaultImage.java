@@ -2,5 +2,5 @@ package numble.karrot.product_image.domain;
 
 public class ProductDefaultImage {
     // 기본 이미지
-    public static final String PRODUCT_DEFAULT_IMAGE = "https://pbs.twimg.com/profile_images/1463023431684079616/ghuPttFw_400x400.jpg";
+    public static final String PRODUCT_DEFAULT_IMAGE = "https://i.ibb.co/Mg9k2BN/free-icon-ladybug-7963466.png";
 }
