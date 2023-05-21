@@ -45,16 +45,16 @@ public class WebSecurityConfig {
                 .logout((logout) -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                         .logoutSuccessUrl("/")
-                        .invalidateHttpSession(true)
-                        .deleteCookies("JSESSIONID")
+//                        .invalidateHttpSession(true)
+//                        .deleteCookies("JSESSIONID")
                 )
                 .exceptionHandling()
                 .accessDeniedPage("/error");
-        http
-                .rememberMe()
-                    .tokenValiditySeconds(3600*24*30)
-                    .alwaysRemember(true)
-                    .userDetailsService(userDetailsService);
+//        http
+//                .rememberMe()
+//                    .tokenValiditySeconds(3600*24*30)
+//                    .alwaysRemember(true)
+//                    .userDetailsService(userDetailsService);
         return http.build();
     }
 
