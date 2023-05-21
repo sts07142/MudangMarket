@@ -14,9 +14,11 @@
     .start__title {
       margin-bottom: 20px;
       font-size: 25px;
+      font-family: 'Cute Font', cursive;
     }
 
     .start__text {
+      font-family: 'Cute Font', cursive;
       width: 60%;
       opacity: 0.7;
     }
