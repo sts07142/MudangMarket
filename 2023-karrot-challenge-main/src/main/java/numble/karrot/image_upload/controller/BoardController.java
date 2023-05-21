@@ -1,7 +1,7 @@
 package numble.karrot.image_upload.controller;
 
-import com.example.img_test.entity.Board;
-import com.example.img_test.service.BoardService;
+import numble.karrot.image_upload.entity.Board;
+import numble.karrot.image_upload.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

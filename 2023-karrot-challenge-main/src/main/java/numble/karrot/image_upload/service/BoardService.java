@@ -1,8 +1,8 @@
 package numble.karrot.image_upload.service;
 
-import com.example.img_test.controller.FileHandler;
-import com.example.img_test.entity.Board;
-import com.example.img_test.repository.BoardRepository;
+import numble.karrot.image_upload.controller.FileHandler;
+import numble.karrot.image_upload.entity.Board;
+import numble.karrot.image_upload.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;

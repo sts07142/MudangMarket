@@ -1,6 +1,6 @@
 package numble.karrot.image_upload.controller;
 
-import com.example.img_test.entity.Board;
+import numble.karrot.image_upload.entity.Board;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.multipart.MultipartFile;
