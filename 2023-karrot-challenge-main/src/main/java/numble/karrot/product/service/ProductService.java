@@ -17,5 +17,5 @@ public interface ProductService {
     void updateProduct(Long id, Product product);
     void updateProductStatus(Long id, ProductStatus status);
     List<ProductStatus> getChangeableProductStatus(ProductStatus status);
-//    List<ProductImage> getProductImage(List<MultipartFile> productImages, Product product);
+    List<ProductImage> getProductImage(List<MultipartFile> productImages, Product product);
 }

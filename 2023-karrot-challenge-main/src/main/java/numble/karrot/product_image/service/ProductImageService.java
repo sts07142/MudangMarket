@@ -9,4 +9,6 @@ import java.io.IOException;
 public interface ProductImageService {
     ProductImage save(ProductImage productImage);
     ProductImage convert(MultipartFile multipartFile, Product product) throws IOException;
+
+    ProductImage findByUrl(String url);
 }

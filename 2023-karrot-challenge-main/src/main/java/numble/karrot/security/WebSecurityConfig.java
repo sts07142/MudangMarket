@@ -33,9 +33,11 @@ public class WebSecurityConfig {
                         .antMatchers("/").permitAll()
                         .antMatchers("/join").permitAll()
                         .antMatchers("/image-test").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .formLogin((form)-> form
                         .loginPage("/login").permitAll()
+                        .loginProcessingUrl("/login")
                         .usernameParameter("email")
                         .passwordParameter("password")
                         .defaultSuccessUrl("/products/list")
@@ -43,9 +45,16 @@ public class WebSecurityConfig {
                 .logout((logout) -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                         .logoutSuccessUrl("/")
+//                        .invalidateHttpSession(true)
+//                        .deleteCookies("JSESSIONID")
                 )
                 .exceptionHandling()
                 .accessDeniedPage("/error");
+//        http
+//                .rememberMe()
+//                    .tokenValiditySeconds(3600*24*30)
+//                    .alwaysRemember(true)
+//                    .userDetailsService(userDetailsService);
         return http.build();
     }
 
