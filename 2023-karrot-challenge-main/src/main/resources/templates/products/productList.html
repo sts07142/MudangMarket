@@ -9,6 +9,7 @@
       type="text/css"
       th:href="@{/css/components/list.css}"
     />
+    <link rel="stylesheet" type="text/css" href="C:\vs_code\2023-karrot-challenge-main\src\main\resources\static\css\components\list.css">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +18,7 @@
   <body>
     <div class="main">
       <div class="header">
-        <span th:text="${nickname} + '님 동네'">개발자님 동네</span>
+        <span style="margin-left: 0px;" th:text="${nickname} + '님 동네'">개발자님 동네</span>
         <a class="register" th:href="@{/products/register}">상품 등록</a>
       </div>
       <div style="overflow: scroll; width: 100%; height: 600px">
