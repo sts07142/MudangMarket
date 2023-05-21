@@ -12,7 +12,7 @@
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     transition: border-color 0.3s ease-in-out;
-    padding: 20px 0px;
+    padding: 10px 0px;
   }
   .header a{
     padding: 10px;
@@ -38,8 +38,8 @@
   }
   .footer{
     display: flex;
-    width: 100%;
-    padding-left: 30%;
+    width: 67%;
+    padding-left: 28%;
     position : absolute;
     bottom : 0;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
