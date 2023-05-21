@@ -5,20 +5,7 @@ plugins {
 	id 'com.google.cloud.tools.jib' version '3.3.1'
 }
 
-jib {
-	from {
-		image = "adoptopenjdk:11-jre"
-	}
-	to {
-		image = "xiu0327/karrot"
-		tags = ["latest"]
-	}
-	container {
-		jvmFlags = ["-Xms128m", "-Xmx128m"]
-	}
-}
-
-group = 'numble'
+group = 'gachon'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 

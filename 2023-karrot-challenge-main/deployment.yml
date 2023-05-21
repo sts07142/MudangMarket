@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
         - name: spring-api
-          image: xiu0327/karrot
+          image: MudangMarket
           ports:
             - containerPort: 8080
