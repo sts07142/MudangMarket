@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService{
         Product product = request.toProductEntity();
         product.addProduct(memberRepository.findByEmail(email).get());
         productRepository.save(product);
-//        updateThumbnail(getProductImage(request.getProductImages(), product), product.getId());
+        updateThumbnail(getProductImage(request.getProductImages(), product), product.getId());
         return product.getId();
     }
 
@@ -77,16 +77,16 @@ public class ProductServiceImpl implements ProductService{
                 .filter((item) -> item != status).collect(Collectors.toList());
     }
 
-//    @Override
-//    public List<ProductImage> getProductImage(List<MultipartFile> productImages, Product product){
-//        return productImages.stream()
-//                .map((image) -> {
-//                    try {
-//                        return productImageService.save(productImageService.convert(image, product));
-//                    } catch (IOException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                })
-//                .collect(Collectors.toList());
-//    }
+    @Override
+    public List<ProductImage> getProductImage(List<MultipartFile> productImages, Product product){
+        return productImages.stream()
+                .map((image) -> {
+                    try {
+                        return productImageService.save(productImageService.convert(image, product));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                })
+                .collect(Collectors.toList());
+    }
 }

@@ -25,14 +25,17 @@ public class ProductImageServiceImpl implements ProductImageService{
     @Override
     public ProductImage convert(MultipartFile multipartFile, Product product) throws IOException{
 
-
-//        String url = s3Uploader.getImageUrl(multipartFile, ImageStorageFolderName.PRODUCT_IMAGE_PATH);
-        String url = null;
+//        String url = findByUrl.
         return ProductImage.builder()
-                .url(url)
-                // .fileName을 변경 필요
-//                .fileName(s3Uploader.getFileName(url))
+//                .url(url)
+//                // .fileName을 변경 필요
+//                .fileName(url)
                 .product(product)
                 .build();
+    }
+
+    @Override
+    public ProductImage findByUrl(String url) {
+        return productImageRepository.findByUrl(url);
     }
 }
