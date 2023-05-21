@@ -5,6 +5,7 @@
     rel="stylesheet"
     type="text/css"
     th:href="@{/css/components/mypage.css}"/>
+	<link rel="stylesheet" type="text/css" href="\css\components\mypage.css">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +14,7 @@
 <body>
     <div>
         <div class="header-bar">
-            <span style="margin-right: 55%; margin-left: 20px;">나의 무당이</span>
+            <span style="margin-right: 50%; margin-left: 20px;">나의 무당이</span>
             <a class="back" href="javascript:history.back(-1)">뒤로가기</a>
         </div>
     </div>
@@ -23,7 +24,7 @@
             <div th:text="${member.nickName}" style="margin-left: 10px; margin-top: 35px;">닉네임</div>
         </div>
     </div>
-    <div style="margin-left: 40px; margin-bottom: 30px;">
+    <div style="margin-bottom: 30px; text-align: center;">
         <a th:href="@{/my-page/profile}" class="profile-modify">프로필 수정</a>
     </div>
     <div class="list">
@@ -39,8 +40,8 @@
             <span style="margin-right: 25%;">🐰</span>
             <a th:href="@{/my-page/chat}">채팅목록</a>
         </div>
-        <div style="margin-top: 60px; margin-left: 10px;">
-            <a class="logout" th:href="@{/logout}">Log out</a>
+        <div style="margin-top: 40px; text-align: center;">
+            <a class="logout" style=" margin-left: 0;" th:href="@{/logout}">Log out</a>
         </div>
     </div>
     <div class="footer">
