@@ -16,29 +16,47 @@
 <body>
     <div class="main">
         <div class="header-bar">
+            <span>관심목록</span>
             <a class="back" href="javascript:history.back(-1)">뒤로가기</a>
         </div>
-        <div style="overflow: scroll; width: 100%; height: 565px">
-        <div th:each="product: ${interestProducts}">
-            <div class="div2">
-            <a th:href="${'/products/list/' + product.id}">
-                <img
-                style="margin-top: 10px"
-                width="150px"
-                height="150px"
-                th:src="${product.thumbnail}"
-                />
-            </a>
+        <div class="main-list">
+            <div th:each="product: ${interestProducts}" style="display: flex; flex-direction: row; width: 100%; height: 184px;">
+                <div class="div2">
+                    <a th:href="${'/products/list/' + product.id}">
+                        <img
+                        width="150px"
+                        height="150px"
+                        th:src="${product.thumbnail}"
+                        />
+                    </a>
+                </div>
+                <div class="div3">
+                    <a th:href="${'/products/list/' + product.id}">
+                        <h2 th:text="${product.title}" class="title">제목</h2>
+                        <h3 th:text="${product.price + ' 원'}" class="price">가격</h3>
+                        <p th:text="${product.place}" class="place">장소</p>
+                        <div style="position:absolute; bottom: 0; margin-top: auto; width: 100%; height: auto;">
+                            <p th:text="${product.status.value}" class="status">상품 상태</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="div3">
-            <p th:text="${product.title}">제목</p>
-            <p th:text="${product.place}">장소</p>
-            <p th:text="${product.price + ' 원'}">가격</p>
-            <p th:text="${product.status.value}">상품 상태</p>
-            </div>
-        </div>
         </div>
     </div>
+    <div class="footer">
+        <div class="bottom-btn">
+            <div style="margin-right: 50px">
+                <a th:href="@{/products/list}" style="font-size: 50px">🏠</a>
+            </div>
+            <div>
+                <a
+                th:href="@{/my-page}"
+                style="margin-left: 15px; font-size: 50px"
+                >🐞</a
+                >
+            </div>
+        </div>
+    </div>    
     <div id="no-mobile">
         <span>화면 크기를 줄여주세요</span>
     </div>

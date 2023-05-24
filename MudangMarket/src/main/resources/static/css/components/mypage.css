@@ -21,30 +21,68 @@ a:hover, a:active { text-decoration: none; }
         display: none;
     }
 }
+
+body {
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
 .back{
     background-color: rgb(224, 16, 44);
     cursor: pointer;
     border-radius: 5px;
     border: none;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header-bar{
+    display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     transition: border-color 0.3s ease-in-out;
-    padding: 20px 0px;
+    padding: 10px 0px;
+    height: 52px;
+}
+.header-bar a{
+    text-align: center;
+  height: 32px;
+  min-width: 88px;
+  padding: 10px;
+  font-size: 20px;
+  margin-right: 5px;
+  margin-left: auto;
+}
+.header-bar span{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 297px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+.profile-div {
+    width: 100%;
+    height: auto;
+    text-align: center;
 }
 .profile{
     display: inline-flex;
-    padding: 30px;
-    padding-left: 100px;
+    padding: 40px 0px;
 }
 .profile img{
     width:70px;
     height:70px;
-    margin-left:30px;
-    margin-top:7px;
-    margin-right: 10px;
     border-radius: 70px;
+    margin-right: 20px;
+}
+.modify-div {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 30px 0px;
 }
 .profile-modify{
     width: 100%;
@@ -67,21 +105,27 @@ a:hover, a:active { text-decoration: none; }
     margin-left: 20%;
 }
 .footer{
-    display: flex;
-    width: 67%;
-    padding-left: 28%;
-    position : absolute;
-    bottom : 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    transition: border-color 0.3s ease-in-out;
-  }
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  bottom : 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease-in-out;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-btn {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
 .list{
-    width: 80%;
-    padding-top: 10px;
-    padding-left: 50px;
-    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
 }
 .list-child{
+    width: auto;
     padding: 10px;
     font-size: 30px;
 }
