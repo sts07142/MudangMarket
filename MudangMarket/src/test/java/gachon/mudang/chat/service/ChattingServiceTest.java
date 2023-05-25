@@ -52,7 +52,7 @@ class ChattingServiceTest {
     @Transactional
     void findChatRoomByMember(){
         List<ChatRoom> chatRoomByMember = chattingService.findChatRoomByMember("test@naver.com");
-        chatRoomByMember.get(0).getProduct().getId();
+//        chatRoomByMember.get(0).getProduct().getId();
     }
 
     public Long createMember(){

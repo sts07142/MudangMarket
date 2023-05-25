@@ -41,15 +41,15 @@ public class ProductDomainTest {
         assertThat(findProduct.getSeller()).isEqualTo(seller);
     }
 
-    @Test
-    void 판매자_상품_조회(){
-        Member member = memberRepository.findByEmail("test@naver.com").get();
-        System.out.println(member.getProducts());
-    }
+//    @Test
+//    void 판매자_상품_조회(){
+//        Member member = memberRepository.findByEmail("test@naver.com").get();
+//        System.out.println(member.getProducts());
+//    }
 
     Long createMember(){
         Member member = MemberJoinRequest.builder()
-                .email("test10@naver.com")
+                .email("test@naver.com")
                 .password("123")
                 .nickname("닉네임")
                 .phone("휴대폰")

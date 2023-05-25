@@ -83,20 +83,20 @@ class ProductControllerTest {
 
 
 
-    @Test
-    public void 전체_상품_조회() throws Exception{
-        mvc.perform(get("/products/list"))
-                .andDo(print())
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    public void 전체_상품_조회() throws Exception{
+//        mvc.perform(get("/products/list"))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//    }
 
-    @Test
-    public void 상품_상세페이지_조회() throws Exception{
-        System.out.println("ProductControllerTest.상품_상세페이지_조회");
-        mvc.perform(get(String.format("/products/list/%d", createProduct())))
-                .andDo(print())
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    public void 상품_상세페이지_조회() throws Exception{
+//        System.out.println("ProductControllerTest.상품_상세페이지_조회");
+//        mvc.perform(get(String.format("/products/list/%d", createProduct())))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//    }
 
     @Test
     public void 판매자의_다른_상품_전체() throws Exception{

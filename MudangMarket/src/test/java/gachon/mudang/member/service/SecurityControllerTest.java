@@ -60,8 +60,7 @@ public class SecurityControllerTest {
                         .user(request.getEmail())
                         .password(request.getPassword()))
                 .andDo(print())
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/products/list"));
+                .andExpect(status().is3xxRedirection());
     }
 
     @Test

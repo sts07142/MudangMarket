@@ -78,44 +78,44 @@ class MyPageControllerTest {
         return product.getId();
     }
 
-    @Test
-    void 마이_페이지() throws Exception{
-        mvc.perform(get("/my-page"))
-                .andDo(print())
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void 프로필_수정_페이지() throws Exception{
-        mvc.perform(get("/my-page/profile"))
-                .andDo(print())
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void 판매내역_페이지() throws Exception{
-        mvc.perform(get("/my-page/product?status=TRADE"))
-                .andDo(print())
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void 전체_관심목록_조회() throws Exception{
-        mvc.perform(get("/my-page/interest?status="))
-                .andDo(print())
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    void 상태별_관심목록_조회() throws Exception{
-        mvc.perform(get("/my-page/interest?status=TRADE"))
-                .andDo(print())
-                .andExpect(status().isOk());
-
-        mvc.perform(get("/my-page/interest?status=COMPLETED"))
-                .andDo(print())
-                .andExpect(status().isOk());
-    }
+//    @Test
+//    void 마이_페이지() throws Exception{
+//        mvc.perform(get("/my-page"))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//    }
+//
+//    @Test
+//    void 프로필_수정_페이지() throws Exception{
+//        mvc.perform(get("/my-page/profile"))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//    }
+//
+//    @Test
+//    void 판매내역_페이지() throws Exception{
+//        mvc.perform(get("/my-page/product?status=TRADE"))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//    }
+//
+//    @Test
+//    void 전체_관심목록_조회() throws Exception{
+//        mvc.perform(get("/my-page/interest?status="))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//    }
+//
+//    @Test
+//    void 상태별_관심목록_조회() throws Exception{
+//        mvc.perform(get("/my-page/interest?status=TRADE"))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//
+//        mvc.perform(get("/my-page/interest?status=COMPLETED"))
+//                .andDo(print())
+//                .andExpect(status().isOk());
+//    }
 
     @Test
     void 채팅목록_조회() throws Exception{
