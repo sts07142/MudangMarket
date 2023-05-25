@@ -95,9 +95,13 @@
     </header>
 
     <div class="start-box">
-        <button class="start-button" onclick="location.href='/join'">시작하기</button>
-        <p class="login-text">이미 계정이 있나요?</p>
-        <a class="login-button" th:href="@{/login}">로그인</a>
+<!--        <button class="start-button" onclick="location.href='/join'">시작하기</button>-->
+        <button class="start-button" onclick="location.href='/login'">로그인</button>
+
+        <p class="login-text">아직 계정이 없나요?</p>
+<!--        <a class="login-button" th:href="@{/login}">로그인</a>-->
+        <a class="login-button" th:href="@{/join}">회원가입</a>
+
     </div>
 
     <div id="no-mobile">
