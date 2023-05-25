@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
     height: 52px;
 }
 .header-bar a{
-    text-align: center;
+  text-align: center;
   height: 32px;
   min-width: 88px;
   padding: 10px;
