@@ -12,71 +12,104 @@
     <title>무당마켓</title>
   </head>
   <body>
-    <div class="header-bar">
-      <a class="back" th:href="@{/my-page}">목록으로</a>
-      <span style="margin-left: 10%">판매내역</span>
+    <div>
+        <div class="header-bar">
+            <span>판매내역</span>
+            <a class="back" href="javascript:history.back(-1)">뒤로가기</a>
+        </div>
     </div>
     <div class="list">
-      <a th:href="@{/my-page/product?status=TRADE}">판매중</a>
-      <a th:href="@{/my-page/product?status=COMPLETED}">거래완료</a>
+      <div style="margin-right: 150px">
+        <a th:href="@{/my-page/product?status=TRADE}">판매중</a>
+      </div>
+      <div>
+        <a th:href="@{/my-page/product?status=COMPLETED}">거래완료</a>
+      </div>
     </div>
-    <div style="overflow: scroll; width: 100%; height: 500px">
+    <div style="margin-bottom: 88px;">
       <div th:each="product: ${products}">
-        <div>
-          <div style="display: flex">
-            <div style="width: 160px; height: 160px">
+        <div class="main-list">
+          <div style="display: flex; flex-direction: row; width: 100%; height: 184px;">
+            <div class="div2">
               <a th:href="${'/products/list/' + product.id}">
                 <img
                   th:src="${product.thumbnail}"
-                  style="margin-top: 10px"
                   width="150px"
                   height="150px"
                 />
               </a>
             </div>
-            <div class="item-info">
-              <p th:text="${product.title}">제목</p>
-              <p th:text="${product.place}">장소</p>
-              <p th:text="${product.price + ' 원'}">가격</p>
-              <div th:if="${#lists.contains(interestByMember, product)}">
-                <a
-                  th:href="@{/interests/delete(productId=${product.id})}"
-                  class="interest"
-                  >💖</a
-                >
-                <span th:if="${product.interestCount > 0}" th:text="${product.interestCount}">하트수</span>
+            <div class="div3">
+              <a th:href="${'/products/list/' + product.id}">
+                <h2 th:text="${product.title}" class="title">제목</h2>
+                <h3 th:text="${product.price + ' 원'}" class="price">가격</h3>
+                <p th:text="${product.place}" class="place">장소</p>
+              </a>
+              <div style="position:absolute; bottom: 0; margin-top: auto; width: 100%; height: auto;" th:if="${#lists.contains(interestByMember, product)}">
+                <div style="width: auto; height: auto; float: right; margin-right: 10px;">
+                  <span
+                  class="numHeart"
+                    th:if="${product.interestCount > 0}"
+                    th:text="${product.interestCount}"
+                    >하트수</span>
+                  <a
+                    th:href="@{/interests/delete(productId=${product.id})}"
+                    class="interest_a"
+                    >💖</a
+                  >
+                </div>
               </div>
-              <div th:unless="${#lists.contains(interestByMember, product)}">
-                <a
-                  th:href="@{/interests/save(productId=${product.id})}"
-                  class="interest"
-                  >🤍️</a
-                >
-                <span th:if="${product.interestCount > 0}" th:text="${product.interestCount}">하트수</span>
+              <div
+                style="position:absolute; bottom: 0; margin-top: auto; width: 100%; height: auto;"
+                th:unless="${#lists.contains(interestByMember, product)}"
+              >
+                <div style="width: auto; height: auto; float: right; margin-right: 10px;">
+                  <span th:if="${product.interestCount > 0}" th:text="${product.interestCount}">하트수</span>
+                  <a
+                    th:href="@{/interests/save(productId=${product.id})}"
+                    class="interest_a"
+                    >🤍️</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div class="status">
-            <a
-              th:if="${status.value == '거래완료'}"
-              th:each="status: ${changeableStatus}"
-              th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
-              th:text="${status.value + '로 변경'}"
-              >거래완료로 변경</a
-            >
-            <a
-              th:unless="${status.value == '거래완료'}"
-              th:each="status: ${changeableStatus}"
-              th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
-              th:text="${status.value + '으로 변경'}"
-              >예약중으로 변경</a
-            >
+          <div>
+            <div class="status-change">
+              <a
+                th:if="${status.value == '거래완료'}"
+                th:each="status: ${changeableStatus}"
+                th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
+                th:text="${status.value + '로 변경'}"
+                style="margin-right: 20px;"
+                >거래완료로 변경</a
+              >
+              <a
+                th:unless="${status.value == '거래완료'}"
+                th:each="status: ${changeableStatus}"
+                th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
+                th:text="${status.value + '으로 변경'}"
+                >예약중으로 변경</a
+              >
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="footer">
+        <div class="bottom-btn">
+            <div style="margin-right: 50px">
+                <a th:href="@{/products/list}" style="font-size: 50px">🏠</a>
+            </div>
+            <div>
+                <a
+                th:href="@{/my-page}"
+                style="margin-left: 15px; font-size: 50px"
+                >🐞</a
+                >
+            </div>
+        </div>
+    </div>    
     <div id="no-mobile">
       <span>화면 크기를 줄여주세요</span>
     </div>
