@@ -56,7 +56,7 @@ public class FileHandler {
                 String contentType = multipartFile.getContentType();
                 String originalFileExtension;
                 // 확장자 명이 없으면 이 파일은 잘 못 된 것이다
-                if (ObjectUtils.isEmpty(contentType)) {
+                if (ObjectUtils.isEmpty(contentType) || contentType == null) {
                     break;
                 } else {
                     if (contentType.contains("image/jpeg")) {

@@ -14,27 +14,28 @@
     <div>
         <div class="header-bar">
             <span>채팅목록</span>
-            <a class="back" href="javascript:history.back(-1)">뒤로가기</a>
+            <a class="back" href="javascript:history.back(-1)" style="font-weight: 600;">뒤로가기</a>
         </div>
     </div>
     <div class="main-list">
-        <div>
+        <div class="back-color">
             <div th:each="room: ${chatList}">
-                <div class="list-item">
-                    <a style="display: flex;" th:href="@{/chat/room(roomName=${room.name}, productId=${room.product.id})}">
-                        <div style="display: inline-block;">
-                            <img th:src="${room.lastChat.profile}" class="profile" style="width: 60px; height: 60px;"/>
-                            <div th:text="${room.lastChat.nickname}" style="margin-left: 7px;">닉네임</div>
+                <a th:href="@{/chat/room(roomName=${room.name}, productId=${room.product.id})}" style="width: 100%; height: auto;">
+                    <div class="list-item">
+                        <div class="div-profile">
+                            <div class="div-profile-img">
+                                <img th:src="${room.lastChat.profile}" class="profile-img"/>
+                                <div class="div-profile-txt">
+                                    <div th:text="${room.lastChat.nickname}" class="div-profile-name">닉네임</div>
+                                    <div th:text="${room.lastChat.content}" class="div-chat-content">마지막 채팅 내용</div>
+                                </div>
+                            </div>
                         </div>
-                        <div th:text="${room.lastChat.content}" style="margin-left: 30px; margin-top: 20px; margin-right: 70px;">마지막 채팅 내용</div>
-                    </a>
-                    <div>
-                        <a th:href="${'/products/list' + room.product.id}">
-                            <img th:src="${room.product.thumbnail}" style="width: 60px; height: 60px; background-color: black;">
-                        </a>
-                        <div th:text="${room.product.status.value}">상품상태</div>
+                        <div class="div-product-img">
+                            <img th:src="${room.product.thumbnail}" style="object-fit: cover; width: 100%; height: auto;">
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

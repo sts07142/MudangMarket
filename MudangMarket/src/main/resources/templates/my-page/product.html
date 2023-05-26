@@ -15,14 +15,14 @@
     <div>
         <div class="header-bar">
             <span>판매내역</span>
-            <a class="back" href="javascript:history.back(-1)">뒤로가기</a>
+            <a class="back" href="javascript:history.back(-1)" style="font-weight: 600;">뒤로가기</a>
         </div>
     </div>
     <div class="list">
-      <div style="margin-right: 150px">
+      <div style="width: 50%; text-align: center; font-weight: 600;">
         <a th:href="@{/my-page/product?status=TRADE}">판매중</a>
       </div>
-      <div>
+      <div style="width: 50%; text-align: center; font-weight: 600;">
         <a th:href="@{/my-page/product?status=COMPLETED}">거래완료</a>
       </div>
     </div>
@@ -79,7 +79,6 @@
                 th:each="status: ${changeableStatus}"
                 th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
                 th:text="${status.value + '로 변경'}"
-                style="margin-right: 20px;"
                 >거래완료로 변경</a>
               <a
                 th:unless="${status.value == '거래완료'}"
