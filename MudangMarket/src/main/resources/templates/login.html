@@ -61,7 +61,13 @@
   <form class="login-form" th:action="@{/login}" th:object="${form}" method="post">
     <div th:if="${param.error}">
       <div>
-        사용자 ID 또는 비밀번호를 확인해주세요.
+        <script th:inline="javascript">
+          /*<![CDATA[*/
+          window.addEventListener('DOMContentLoaded', (event) => {
+            alert('사용자 ID 또는 비밀번호를 확인해주세요.');
+          });
+          /*]]>*/
+        </script>
       </div>
     </div>
     <p>로그인</p>

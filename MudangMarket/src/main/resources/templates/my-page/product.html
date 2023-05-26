@@ -82,13 +82,16 @@
               <a
                 th:if="${status.value == '거래완료'}"
                 th:each="status: ${changeableStatus}"
+
                 th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
+                th:onclick="alert('거래완료로 변경되었습니다!')"
                 th:text="${status.value + '로 변경'}"
                 >거래완료로 변경</a>
               <a
                 th:unless="${status.value == '거래완료'}"
                 th:each="status: ${changeableStatus}"
                 th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
+                th:onclick="alert('예약중으로 변경되었습니다!')"
                 th:text="${status.value + '으로 변경'}"
                 >예약중으로 변경</a>
             </div>
