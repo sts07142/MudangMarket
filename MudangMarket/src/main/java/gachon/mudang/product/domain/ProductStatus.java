@@ -3,11 +3,6 @@ package gachon.mudang.product.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static java.util.Arrays.stream;
-
 @Getter
 @AllArgsConstructor
 public enum ProductStatus {

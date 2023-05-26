@@ -13,9 +13,9 @@
 </head>
 <body>
     <div class="header">
-        <a class="button-tab" th:if="${memberId == product.seller.id}" th:href="@{/products/update(productId=${product.id})}">상품 수정</a>
-        <a class="button-tab" th:if="${memberId == product.seller.id}" th:href="@{/products/delete/check(productId=${product.id})}">상품 삭제</a>
-        <a href="/products/list" class="back">목록으로</a>
+        <a class="button-tab" th:if="${memberId == product.seller.id}" th:href="@{/products/update(productId=${product.id})}" style="font-weight: 600;">상품 수정</a>
+        <a class="button-tab" th:if="${memberId == product.seller.id}" th:href="@{/products/delete/check(productId=${product.id})}" style="font-weight: 600;">상품 삭제</a>
+        <a href="/products/list" class="back" style="font-weight: 600;">목록으로</a>
     </div>
     <div class="detail-main">
         <div class="slider">
@@ -25,13 +25,6 @@
                 <img th:src="${item}" class="product-img" />
             </li>
             </ul>
-            <div class="bullets">
-            <label
-                th:each="item, i : ${productDetail.productImages}"
-                th:for="'slide'+${i.index}"
-                >&nbsp;</label
-            >
-            </div>
         </div>
         <div class="main">
             <div class="profile">
@@ -40,7 +33,7 @@
                         style="background-color: black"
                         th:src="${productDetail.profile}"
                     />
-                    <div style="text-overflow: ellipsis; overflow: hidden; margin-left: 10px; float: left;" th:text="${productDetail.nickName}">
+                    <div style="text-overflow: ellipsis; overflow: hidden; margin-left: 10px; float: left; font-weight: 700; font-size: 20px;" th:text="${productDetail.nickName}">
                         닉네임
                     </div>
                 </div>
@@ -77,6 +70,11 @@
                     ><b>닉네임님의 판매상품</b></span
                     >
                     <a th:href="@{/products/list/other(memberId=${product.seller.id})}"
+                    style="
+                    margin-left: auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;"
                     >모두 보기</a
                     >
                 </div>
@@ -90,8 +88,10 @@
                             </a>
                         </div>
                         <div class="div-txt">
-                            <h2 th:text="${item.title}">상품명</h2>
-                            <p th:text="${item.price + ' 원'}">가격</p>
+                            <a th:href="${'/products/list/' + item.id}">
+                                <h2 th:text="${item.title}">상품명</h2>
+                                <p th:text="${item.price + ' 원'}">가격</p>
+                            </a>
                         </div>
                     </span>
                     <span th:if="${i.index==1}" style="display: inline-block">
@@ -103,8 +103,10 @@
                             </a>
                         </div>
                         <div class="div-txt">
-                            <h2 th:text="${item.title}">상품명</h2>
-                            <p th:text="${item.price + ' 원'}">가격</p>
+                            <a th:href="${'/products/list/' + item.id}">
+                                <h2 th:text="${item.title}">상품명</h2>
+                                <p th:text="${item.price + ' 원'}">가격</p>
+                            </a>
                         </div>
                     </span>
                     <span th:if="${i.index==2}" style="display: inline-block">
@@ -116,8 +118,10 @@
                             </a>
                         </div>
                         <div class="div-txt">
-                            <h2 th:text="${item.title}">상품명</h2>
-                            <p th:text="${item.price + ' 원'}">가격</p>
+                            <a th:href="${'/products/list/' + item.id}">
+                                <h2 th:text="${item.title}">상품명</h2>
+                                <p th:text="${item.price + ' 원'}">가격</p>
+                            </a>
                         </div>
                     </span>
                 </div>
@@ -131,9 +135,9 @@
             <div style="margin: 10px; font-size: 40px;" th:unless="${#lists.contains(interestList, product)}">
                 <a class="interest_a" th:href="@{/interests/save(productId=${product.id})}">🤍️</a>
             </div>
-            <span th:text="${productDetail.price + ' 원'}">상품가격</span>
-            <a th:if="${memberId == product.seller.id}" th:href="${'/products/list/'+ product.id +'/chat'}" class="chatting">관련채팅</a>
-            <a th:unless="${memberId == product.seller.id}" th:href="@{/chat/room(roomName=${roomName}, productId=${product.id})}" class="chatting">채팅하기</a>
+            <span th:text="${productDetail.price + ' 원'}" style="font-weight: 700;">상품가격</span>
+            <a th:if="${memberId == product.seller.id}" th:href="${'/products/list/'+ product.id +'/chat'}" class="chatting" style="font-weight: 600;">관련채팅</a>
+            <a th:unless="${memberId == product.seller.id}" th:href="@{/chat/room(roomName=${roomName}, productId=${product.id})}" class="chatting" style="font-weight: 600;">채팅하기</a>
         </div>   
     <div id="no-mobile">
         <span>화면 크기를 줄여주세요</span>

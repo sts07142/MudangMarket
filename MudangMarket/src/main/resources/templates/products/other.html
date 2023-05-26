@@ -18,23 +18,23 @@
       <div class="header">
         <a
           class="register"
-          th:href="@{/products/list/other(memberId=${memberId})}"
+          th:href="@{/products/list/other(memberId=${memberId})}" style="font-weight: 600;"
           >전체</a
         >
         <a
           class="register"
-          th:href="@{/products/list/other(memberId=${memberId}, status='TRADE')}"
+          th:href="@{/products/list/other(memberId=${memberId}, status='TRADE')}" style="font-weight: 600;"
           >판매중</a
         >
         <a
           class="register"
-          th:href="@{/products/list/other(memberId=${memberId}, status='COMPLETED')}"
+          th:href="@{/products/list/other(memberId=${memberId}, status='COMPLETED')}" style="font-weight: 600;"
           >거래완료</a
         >
-        <a class="back" href="javascript:history.back(-1)">뒤로가기</a>
+        <a class="back" href="javascript:history.back(-1)" style="font-weight: 600;">뒤로가기</a>
       </div>
       <div class="list">
-        <div th:each="product: ${otherProducts}">
+        <div th:each="product: ${otherProducts}" style="display: flex; width: 100%; height: auto;">
           <div class="div2">
             <a th:href="${'/products/list/' + product.id}">
               <img

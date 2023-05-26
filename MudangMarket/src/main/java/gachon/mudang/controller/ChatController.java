@@ -31,8 +31,9 @@ public class ChatController {
      * @param chatDto
      */
     @MessageMapping(value = "/chat/send")
-    public void send(ChatDto chatDto){
+    public void send(ChatDto chatDto) {
         chattingService.saveChat(chatDto);
-        template.convertAndSend("/sub/chat/room/"+chatDto.getRoomId(), chatDto);
+        template.convertAndSend("/sub/chat/room/" + chatDto.getRoomId(), chatDto);
     }
+    
 }

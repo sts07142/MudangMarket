@@ -1,6 +1,5 @@
 package gachon.mudang.controller;
 
-import gachon.mudang.interest.service.InterestService;
 import gachon.mudang.product.service.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import gachon.mudang.chat.domain.ChatRoom;
@@ -27,7 +26,6 @@ public class MyPageController {
 
     private final MemberService memberService;
     private final ProductServiceImpl productService;
-    private final InterestService interestService;
     private final ChattingService chattingService;
 
     /**
@@ -97,10 +95,15 @@ public class MyPageController {
      */
     @GetMapping("/chat")
     public String findRoomsByMemberPage(@AuthenticationPrincipal UserDetails userDetails, Model model){
-        System.out.println("이거 보자 " + userDetails.getUsername());
         // 1. 채팅 목록 조회 SELECT
-//        List<ChatRoom> chatList = chattingService.findChatRoomByEmail(userDetails.getUsername());
+        // List<ChatRoom> chatList = chattingService.findChatRoomByEmail(userDetails.getUsername());
         List<ChatRoom> chatList = chattingService.findChatRoomByMember(userDetails.getUsername());
+        
+        System.out.println("이거 보자 " + userDetails.getUsername());
+        System.out.println("이거 보자 " + chatList.size());
+        for (int i = 0; i < chatList.size(); i++) {
+            System.out.println("챗리스트 반복문 : " + chatList.get(i).toString());
+        }
         // 2. View 속성값 등록
         model.addAttribute("userEmail", userDetails.getUsername());
         model.addAttribute("chatList", chatList);
