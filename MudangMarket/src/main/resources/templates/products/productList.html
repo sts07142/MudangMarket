@@ -19,7 +19,7 @@
     <div class="main">
       <div class="header">
 
-        <span style="margin-left: 0px;" th:text="${nickname} + '님, 가천대학교'">개발자님 동네</span>
+        <span style="margin-left: 0px;" th:text="${nickname} + '님, 환영해요!'">개발자님 동네</span>
 
         <a class="register" th:href="@{/products/register}" style="font-weight: 600;">상품 등록</a>
       </div>
@@ -53,6 +53,7 @@
                   >하트수</span>
                 <a
                   class="interest_a"
+                  th:onclick="alert('관심목록에서 삭제되었습니다!')"
                   th:href="@{/interests/delete(productId=${product.id})}"
                   >💖</a>
               </div>
@@ -71,6 +72,7 @@
                 >
                 <a
                   class="interest_a"
+                  th:onclick="alert('관심목록에 추가되었습니다!')"
                   th:href="@{/interests/save(productId=${product.id})}"
                   >🤍️</a
                 >
