@@ -130,10 +130,14 @@
     </div>
         <div class="footer">
             <div style="margin: 10px; font-size: 40px;" th:if="${#lists.contains(interestList, product)}">
-                <a class="interest_a" th:href="@{/interests/delete(productId=${product.id})}">💖</a>
+                <a class="interest_a"
+                   th:onclick="alert('관심목록에서 삭제되었습니다!')"
+                   th:href="@{/interests/delete(productId=${product.id})}">💖</a>
             </div>
             <div style="margin: 10px; font-size: 40px;" th:unless="${#lists.contains(interestList, product)}">
-                <a class="interest_a" th:href="@{/interests/save(productId=${product.id})}">🤍️</a>
+                <a class="interest_a"
+                   th:onclick="alert('관심목록에 추가되었습니다!')"
+                   th:href="@{/interests/save(productId=${product.id})}">🤍️</a>
             </div>
             <span th:text="${productDetail.price + ' 원'}" style="font-weight: 700;">상품가격</span>
             <a th:if="${memberId == product.seller.id}" th:href="${'/products/list/'+ product.id +'/chat'}" class="chatting" style="font-weight: 600;">관련채팅</a>
