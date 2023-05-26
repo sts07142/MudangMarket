@@ -30,5 +30,4 @@ public class InterestController {
         model.addAttribute("state", "삭제");
         return "interest-save-and-delete";
     }
-
 }
