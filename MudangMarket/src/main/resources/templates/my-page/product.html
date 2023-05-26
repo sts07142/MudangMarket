@@ -15,14 +15,17 @@
     <div>
         <div class="header-bar">
             <span>판매내역</span>
-            <a class="back" href="javascript:history.back(-1)" style="font-weight: 600;">뒤로가기</a>
+            <a class="back" href="/my-page" style="font-weight: 600;">뒤로가기</a>
         </div>
     </div>
     <div class="list">
-      <div style="width: 50%; text-align: center; font-weight: 600;">
+      <div style="width: 33%; text-align: center; font-weight: 600;">
         <a th:href="@{/my-page/product?status=TRADE}">판매중</a>
       </div>
-      <div style="width: 50%; text-align: center; font-weight: 600;">
+      <div style="width: 33%; text-align: center; font-weight: 600;">
+        <a th:href="@{/my-page/product?status=RESERVATION}">예약중</a>
+      </div>
+      <div style="width: 33%; text-align: center; font-weight: 600;">
         <a th:href="@{/my-page/product?status=COMPLETED}">거래완료</a>
       </div>
     </div>
@@ -54,6 +57,7 @@
                     >하트수</span>
                   <a
                     th:href="@{/interests/delete(productId=${product.id})}"
+                    th:onclick="alert('관심목록에서 삭제되었습니다!')"
                     class="interest_a"
                     >💖</a>
                 </div>
@@ -66,6 +70,7 @@
                   <span th:if="${product.interestCount > 0}" th:text="${product.interestCount}">하트수</span>
                   <a
                     th:href="@{/interests/save(productId=${product.id})}"
+                    th:onclick="alert('관심목록에 추가되었습니다!')"
                     class="interest_a"
                     >🤍️</a>
                 </div>
