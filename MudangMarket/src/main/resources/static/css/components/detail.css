@@ -3,50 +3,190 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:hover, a:active { text-decoration: none; }
-.header a{
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+body {
+    margin: 0;
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+.header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease-in-out;
+  padding: 10px 0px;
+  height: 52px;
+}
+.back{
+    float: right;
+    display: flex;
+    background-color: rgb(224, 16, 44);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: 5px;
+    width: 88px;
+    height: 32px;
+}
+.button-tab {
     background-color: rgb(200, 200, 200);
+    height: 21px;
     cursor: pointer;
     border-radius: 5px;
     border: none;
     padding: 5px;
+    margin-left: 5px;
 }
 .main {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    margin-top: 20px;
+    width: 100%;
 }
-img {
-    width: 300px;
-    height: 300px;
+.detail-main {
+    overflow: scroll; 
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    height: auto;
+    margin-bottom: 88px;
+}
+.detail-main::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }
 .profile {
-    display: inline-flex;
-    padding: 10px;
-    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .profile img {
     width: 50px;
     height: 50px;
-    margin-left: 30px;
-    margin-top: 7px;
-    margin-right: 10px;
     border-radius: 70px;
+    float: left;
 }
 .product-info {
-    padding-left: 20px;
-    margin-left: 60px;
+    margin-top: 30px;
+    
+    width: 100%;
+    height: auto;
 }
+.product-details {
+    display: inline-block;
+    position: relative;
+}
+
+.title {
+    margin: 0;
+    width: auto;
+    float: left;
+}
+
+.prd-status {
+    margin: 0;
+    margin-left: 10px;
+    font-size: 15px;
+    width: auto;
+    min-width: 50px;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+}
+
+.prd-category {
+    margin: 0;
+    font-size: 15px;
+    width: auto;
+    min-width: 50px;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.regist-time {
+    margin: 0;
+    font-size: 15px;
+    width: auto;
+    min-width: 50px;
+    display: inline-block;
+    font-size: 13px;
+}
+.prd-list {
+    border-top: 1px solid rgba(0, 0, 0, 0.2); 
+    transition: border-color 0.3s ease-in-out;
+    width: 100%;
+    
+}
+.prd-list a {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.list-3 {
+    padding: 0px 20px;
+    padding-top: 30px;
+    display: flex;
+}
+.list-3 a {
+    width: 100px;
+    height: auto;
+    margin-right: auto;
+}
+.div-img {
+    width: 100px;
+    float: left;
+}
+.div-txt {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding-left: 10px;
+}
+.div-txt h2 {
+    width: auto;
+    margin: 0;
+}
+.div-txt p {
+    width: auto;
+    margin: 0px;
+    margin-top: 5px;
+    font-weight: 700;
+}
+.list-3 img {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+}
+.list-3 span {
+    width: 100%;
+    display: inline-block;
+}
+
 .heartBtn {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 .slider {
-    width: 300px;
-    height: 300px;
-    position: relative;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
     overflow: hidden; /* 현재 슬라이드 오른쪽에 위치한 나머지 슬라이드 들이 보이지 않도록 가림 */
+}
+.product-img {
+    width: 100%;
+    height: auto;
 }
 .slider input[type="radio"] {
     display: none;
@@ -54,15 +194,19 @@ img {
 ul.imgs {
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 500px;
     list-style: none;
+    border: 1px solid black;
 }
 ul.imgs li {
     position: absolute;
     left: 500px;
     transition-delay: 1s; /* 새 슬라이드가 이동해 오는 동안 이전 슬라이드 이미지가 배경이 보이도록 지연 */
-
+    height: auto;
     padding: 0;
     margin: 0;
+    width: 70%;
 }
 .bullets {
     position: absolute;
@@ -156,18 +300,19 @@ ul.imgs li {
 }
 
 .footer{
-    display: flex;
     width: 100%;
-    padding-left: 10px;
-    position : absolute;
+    position : fixed;
     bottom : 0;
+    background-color: white;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     transition: border-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .footer span{
+    margin-right: auto;
     font-size: 25px;
-    padding: 10px;
-    margin-top: 10px;
     margin-left: 20px;
 }
 .chatting{
@@ -175,20 +320,7 @@ ul.imgs li {
     cursor: pointer;
     border-radius: 5px;
     border: none;
-    margin-left: 20%;
-    margin-top: 15px;
-    margin-bottom: 10px;
     padding: 10px;
-}
-a { text-decoration: none; color: black; }
-a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
-a:focus { text-decoration: none; }
-a:hover, a:active { text-decoration: none; }
-.header a{
-    background-color: rgb(200, 200, 200);
-    cursor: pointer;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
+    margin-right: 5px;
+    font-size: 20px;
 }
