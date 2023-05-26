@@ -73,6 +73,11 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     List<Interest> interests = new ArrayList<>();
 
+//    @Builder
+//    public Product(ProductStatus status) {
+//        this.status = status;
+//    }
+
     @Builder
     public Product(String title, String category, int price, String content) {
         this.title = title;

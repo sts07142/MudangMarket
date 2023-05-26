@@ -29,6 +29,11 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
+                .headers()
+                .frameOptions()
+                .disable()
+                .and()
+                .csrf().disable()
                 .authorizeHttpRequests((requests)-> requests
                         .antMatchers("/").permitAll()
                         .antMatchers("/join").permitAll()

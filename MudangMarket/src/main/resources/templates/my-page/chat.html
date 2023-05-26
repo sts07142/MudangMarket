@@ -29,7 +29,7 @@
                         <div th:text="${room.lastChat.content}" style="margin-left: 30px; margin-top: 20px; margin-right: 70px;">마지막 채팅 내용</div>
                     </a>
                     <div>
-                        <a th:herf="${'/products/list' + room.product.id}">
+                        <a th:href="${'/products/list' + room.product.id}">
                             <img th:src="${room.product.thumbnail}" style="width: 60px; height: 60px; background-color: black;">
                         </a>
                         <div th:text="${room.product.status.value}">상품상태</div>

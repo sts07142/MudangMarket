@@ -74,6 +74,7 @@ public class MyPageController {
         Member member = memberService.findMember(userDetails.getUsername());
         // 2. View 속성값 등록
         model.addAttribute("products", member.getProductByStatus(status));
+//        member.getProductByStatus(status)
         model.addAttribute("interestByMember", member.getProductByInterest());
         model.addAttribute("changeableStatus", productService.getChangeableProductStatus(status));
         return "my-page/product";
@@ -96,7 +97,9 @@ public class MyPageController {
      */
     @GetMapping("/chat")
     public String findRoomsByMemberPage(@AuthenticationPrincipal UserDetails userDetails, Model model){
+        System.out.println("이거 보자 " + userDetails.getUsername());
         // 1. 채팅 목록 조회 SELECT
+//        List<ChatRoom> chatList = chattingService.findChatRoomByEmail(userDetails.getUsername());
         List<ChatRoom> chatList = chattingService.findChatRoomByMember(userDetails.getUsername());
         // 2. View 속성값 등록
         model.addAttribute("userEmail", userDetails.getUsername());

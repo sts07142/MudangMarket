@@ -55,8 +55,7 @@
                   <a
                     th:href="@{/interests/delete(productId=${product.id})}"
                     class="interest_a"
-                    >💖</a
-                  >
+                    >💖</a>
                 </div>
               </div>
               <div
@@ -68,8 +67,7 @@
                   <a
                     th:href="@{/interests/save(productId=${product.id})}"
                     class="interest_a"
-                    >🤍️</a
-                  >
+                    >🤍️</a>
                 </div>
               </div>
             </div>
@@ -82,15 +80,13 @@
                 th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
                 th:text="${status.value + '로 변경'}"
                 style="margin-right: 20px;"
-                >거래완료로 변경</a
-              >
+                >거래완료로 변경</a>
               <a
                 th:unless="${status.value == '거래완료'}"
                 th:each="status: ${changeableStatus}"
                 th:href="@{/products/update/status(productId=${product.id}, status=${status})}"
                 th:text="${status.value + '으로 변경'}"
-                >예약중으로 변경</a
-              >
+                >예약중으로 변경</a>
             </div>
           </div>
         </div>
