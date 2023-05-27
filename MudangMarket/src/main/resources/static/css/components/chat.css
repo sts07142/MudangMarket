@@ -74,7 +74,7 @@ body::-webkit-scrollbar {
 }
 
 .form-control {
-    width: calc(100% - 102px);
+    width: calc(100% - 132px);
     min-height: 38px;
     font-size: 15px;
     border: 1px solid #c8c8c8;
@@ -213,6 +213,10 @@ button.accent {
     min-height: 48px;
 }
 
+.chat-message p {
+    word-wrap: break-word;
+}
+
 #chat-page .chat-message img {
     position: absolute;
     width: 42px;
@@ -297,7 +301,7 @@ button.accent {
     }
 
     #messageForm .input-group button {
-        width: 65px;
+        width: 75px;
     }
 
     .chat-header {
