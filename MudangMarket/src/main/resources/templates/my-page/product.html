@@ -19,13 +19,13 @@
         </div>
     </div>
     <div class="list">
-      <div style="width: 33%; text-align: center; font-weight: 600;">
+      <div style="width: 33%; text-align: center; font-weight: 600;" id="TRADE">
         <a th:href="@{/my-page/product?status=TRADE}">판매중</a>
       </div>
-      <div style="width: 33%; text-align: center; font-weight: 600;">
+      <div style="width: 33%; text-align: center; font-weight: 600;" id="RESERVATION">
         <a th:href="@{/my-page/product?status=RESERVATION}">예약중</a>
       </div>
-      <div style="width: 33%; text-align: center; font-weight: 600;">
+      <div style="width: 33%; text-align: center; font-weight: 600;" id="COMPLETED">
         <a th:href="@{/my-page/product?status=COMPLETED}">거래완료</a>
       </div>
     </div>
@@ -114,4 +114,15 @@
       <span>화면 크기를 줄여주세요</span>
     </div>
   </body>
+  <script>
+    var newURL = window.location.href;
+    newURL = newURL.split('=')[1];
+    if(newURL == 'TRADE') {
+      document.getElementById("TRADE").style.fontSize = '20px';
+    } else if(newURL == 'RESERVATION') {
+      document.getElementById("RESERVATION").style.fontSize = '20px';
+    } else {
+      document.getElementById("COMPLETED").style.fontSize = '20px';
+    }
+  </script>
 </html>
