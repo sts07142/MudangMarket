@@ -300,6 +300,7 @@ ul.imgs li {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 13px;
 }
 .footer span{
     margin-right: auto;
