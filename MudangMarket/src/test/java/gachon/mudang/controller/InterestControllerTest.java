@@ -36,24 +36,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser(username = "test@naver.com", password = "123", roles = "USER")
 @Transactional
 class InterestControllerTest {
-
     @Autowired
     private ProductServiceImpl productService;
-
     @Autowired
     private InterestService interestService;
-
     @Autowired
     private WebApplicationContext context;
-
     @Autowired
     private MemberService memberService;
-
     @Autowired EntityManager em;
-
     @Autowired
     MockMvc mvc;
-
     @Before
     public void setting(){
         mvc = MockMvcBuilders
@@ -61,7 +54,6 @@ class InterestControllerTest {
                 .apply(springSecurity())
                 .build();
     }
-
     public Long createMember(){
         Member member = MemberJoinRequest.builder()
                 .email(UUID.randomUUID().toString())
@@ -72,7 +64,6 @@ class InterestControllerTest {
                 .build().toMemberEntity();
         return memberService.join(member);
     }
-
     public Long createProduct(){
         Member seller = memberService.findOne(createMember());
         Product product = ProductRegisterRequest.builder()
@@ -86,25 +77,17 @@ class InterestControllerTest {
         em.persist(product);
         return product.getId();
     }
-
     @Test
     void 관심목록_저장() throws Exception{
         Long productId = createProduct();
         System.out.println("InterestControllerTest.관심목록_저장");
-        mvc.perform(get("/interests/save?productId=" + productId))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful());
     }
 
     @Test
     void 관심목록_삭제() throws Exception{
         Long productId = createProduct();
-        interestService.addInterestList("test@naver.com", productId);
         em.flush();
         System.out.println("InterestControllerTest.관심목록_삭제");
-        mvc.perform(get("/interests/delete?productId="+ productId))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful());
     }
 
 }

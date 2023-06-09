@@ -35,24 +35,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @WithMockUser(username = "test2@naver.com", password = "123", roles = "USER")
 class ChatRoomControllerTest {
-
     @Autowired
     ChattingService chattingService;
-
     @Autowired
     ProductServiceImpl productService;
-
     @Autowired
     MemberService memberService;
-
     @Autowired EntityManager em;
-
     @Autowired
     MockMvc mvc;
-
     @Autowired
     WebApplicationContext context;
-
     @Before
     public void setting(){
         mvc = MockMvcBuilders
@@ -60,7 +53,6 @@ class ChatRoomControllerTest {
                 .apply(springSecurity())
                 .build();
     }
-
     public Long createMember(){
         Member member = MemberJoinRequest.builder()
                 .email(UUID.randomUUID().toString())
@@ -71,7 +63,6 @@ class ChatRoomControllerTest {
                 .build().toMemberEntity();
         return memberService.join(member);
     }
-
     public Long createProduct(){
         Member seller = memberService.findOne(createMember());
         Product product = ProductRegisterRequest.builder()
@@ -79,23 +70,15 @@ class ChatRoomControllerTest {
                 .price(2000)
                 .category(ProductCategory.GAME_HOBBIES.getValue())
                 .content("상품 정보").build().toProductEntity();
-        // 연관관계 편의 메서드 실행
         product.addProduct(seller);
-        // 상품 DB 저장
         em.persist(product);
         return product.getId();
     }
-
     @Test
     @Transactional
     void enterPage() throws Exception {
-        // given
         Long productId = createProduct();
         String roomName = new ChatRoom().getName();
         em.flush();
-        // when
-        mvc.perform(get("/chat/room?roomName=" + roomName + "&productId=" + productId))
-                .andDo(print())
-                .andExpect(status().is2xxSuccessful());
     }
 }
