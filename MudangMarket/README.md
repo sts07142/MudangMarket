@@ -15,7 +15,7 @@
 - 프론트엔드 : HTML, CSS, Thymeleaf
 - 백엔드 : Spring, Springboot, Spring Security
 
-## ERD 다이어그램s
+## ERD 다이어그램
 <img src="https://github.com/Hyunstone/software_engineering/assets/96871857/836d82ed-9edc-466b-9078-04fd9e08f349">
 
 ## 엔티티 관계도
