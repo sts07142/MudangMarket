@@ -14,27 +14,28 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class ChattingServiceImpl implements ChattingService{
-
     private final ChatRoomRepository chatRoomRepository;
     private final ChatRepository chatRepository;
     private final ProductRepository productRepository;
 
+    // Method to find all chat rooms associated with the given member email.
     @Override
     public List<ChatRoom> findChatRoomByMember(String email) {
         return chatRoomRepository.findChatRoomByMember(email);
     }
 
+    // Method to find a chat room by given product id and buyer id.
     @Override
     public ChatRoom findChatRoomByBuyer(Long productId, Long buyerId) {
         return chatRoomRepository.findByProductIdAndBuyerId(productId, buyerId)
                 .orElseGet(()-> new ChatRoom());
     }
 
+    // Method to save a chat into the database.
     @Override
     @Transactional
     public Long saveChat(ChatDto chatDto) {
@@ -47,17 +48,19 @@ public class ChattingServiceImpl implements ChattingService{
         return chat.getId();
     }
 
+    // Method to find all chat rooms by given product id.
     @Override
     public List<ChatRoom> findByProductId(Long productId){
         return chatRoomRepository.findByProductId(productId);
     }
 
+    // Method to find all chats in a chat room by given room id.
     @Override
     public List<Chat> findChatList(Long roomId){
         return chatRepository.findByChatRoomId(roomId);
     }
 
-
+    // Method to find a chat room by room name, or create one if it doesn't exist.
     @Override
     @Transactional
     public ChatRoom findChatRoomByName(Member member, String roomName, Long productId) {
@@ -75,3 +78,4 @@ public class ChattingServiceImpl implements ChattingService{
     }
 
 }
+

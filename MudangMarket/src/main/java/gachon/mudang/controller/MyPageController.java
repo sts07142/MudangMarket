@@ -23,90 +23,84 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("my-page")
 public class MyPageController {
-
     private final MemberService memberService;
     private final ProductServiceImpl productService;
     private final ChattingService chattingService;
 
-    /**
-     * 나의 당근 페이지로 이동
-     * @param model
-     * @return
-     */
+    // Method to handle GET requests to "/my-page"
     @GetMapping()
     public String myPage(@AuthenticationPrincipal UserDetails userDetails, Model model){
+        // Add authenticated user's details to the model
         model.addAttribute("member", memberService.findMember(userDetails.getUsername()));
+        // Returns the name of the view to be rendered
         return "my-page/main";
     }
 
-    /**
-     * 프로필 수정 페이지로 이동
-     * @return
-     */
+    // Method to handle GET requests to "/my-page/profile"
     @GetMapping("/profile")
     public String profileUpdatePage(@AuthenticationPrincipal UserDetails userDetails, Model model){
-        // 1. 수정할 회원 정보 조회 SELECT
+        // Fetch the member's details
         Member member = memberService.findMember(userDetails.getUsername());
-        // 2. View 속성값 등록
+        // Add the member and a new MemberUpdateRequest form to the model
         model.addAttribute("member", member);
         model.addAttribute("form", MemberUpdateRequest.builder().nickName(member.getNickName()).build());
+        // Returns the name of the view to be rendered
         return "my-page/profile";
     }
 
+    // Method to handle POST requests to "/my-page/profile/{memberId}"
     @PostMapping("/profile/{memberId}")
     @ResponseStatus(HttpStatus.FOUND)
     public String profileUpdate(
             @PathVariable(name = "memberId") Long memberId,
             @ModelAttribute MemberUpdateRequest form) throws IOException {
+        // Update member's profile
         memberService.update(memberId, form);
+        // Redirects the client to the "/my-page"
         return "redirect:/my-page";
     }
 
-    /**
-     * 판매내역 페이지로 이동
-     * @return
-     */
+    // Method to handle GET requests to "/my-page/product"
     @GetMapping("/product")
     public String productDetailsPage(@AuthenticationPrincipal UserDetails userDetails, @Nullable @RequestParam("status") ProductStatus status, Model model){
-        // 1. 회원 정보 SELECT
+        // Fetch the member's details
         Member member = memberService.findMember(userDetails.getUsername());
-        // 2. View 속성값 등록
+        // Add the member's products, interests, and changeable status to the model
         model.addAttribute("products", member.getProductByStatus(status));
-//        member.getProductByStatus(status)
         model.addAttribute("interestByMember", member.getProductByInterest());
         model.addAttribute("changeableStatus", productService.getChangeableProductStatus(status));
+        // Returns the name of the view to be rendered
         return "my-page/product";
     }
 
+    // Method to handle GET requests to "/my-page/interest"
     @GetMapping("/interest")
     public String interestDetailsPageByStatus(@AuthenticationPrincipal UserDetails userDetails, @Nullable @RequestParam("status") ProductStatus status, Model model){
-        // 1. 회원 정보 SELECT
+        // Fetch the member's details
         Member member = memberService.findMember(userDetails.getUsername());
-        // 2. View 속성 등록
+        // Add the member's interested products to the model
         model.addAttribute("interestProducts", member.getInterestStatus(status));
+        // Returns the name of the view to be rendered
         return "my-page/interest";
     }
 
-    /**
-     * 채팅 목록 조회 페이지
-     * @param userDetails
-     * @param model
-     * @return
-     */
+    // Method to handle GET requests to "/my-page/chat"
     @GetMapping("/chat")
     public String findRoomsByMemberPage(@AuthenticationPrincipal UserDetails userDetails, Model model){
-        // 1. 채팅 목록 조회 SELECT
-        // List<ChatRoom> chatList = chattingService.findChatRoomByEmail(userDetails.getUsername());
+        // Fetch the chatrooms associated with the member
         List<ChatRoom> chatList = chattingService.findChatRoomByMember(userDetails.getUsername());
-        
+
+        // Some logging statements
         System.out.println("이거 보자 " + userDetails.getUsername());
         System.out.println("이거 보자 " + chatList.size());
         for (int i = 0; i < chatList.size(); i++) {
             System.out.println("챗리스트 반복문 : " + chatList.get(i).toString());
         }
-        // 2. View 속성값 등록
+
+        // Add the user's email and chatrooms to the model
         model.addAttribute("userEmail", userDetails.getUsername());
         model.addAttribute("chatList", chatList);
+        // Returns the name of the view to be rendered
         return "my-page/chat";
     }
 }
