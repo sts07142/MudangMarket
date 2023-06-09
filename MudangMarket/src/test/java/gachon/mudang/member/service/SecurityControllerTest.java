@@ -30,14 +30,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 @WithMockUser(roles = "USER")
 public class SecurityControllerTest {
-
-
     @Autowired
     private WebApplicationContext context;
-
     @Autowired
     MockMvc mvc;
-
     @Before
     public void setting(){
         mvc = MockMvcBuilders
@@ -45,16 +41,13 @@ public class SecurityControllerTest {
                 .apply(springSecurity())
                 .build();
     }
-
     @Test
     @Transactional
     public void 로그인_테스트_성공() throws Exception{
-        //given
         MemberLoginRequest request = MemberLoginRequest.builder()
                 .email("test@naver.com")
                 .password("123")
                 .build();
-        //when
         mvc.perform(formLogin()
                         .userParameter("email")
                         .user(request.getEmail())
@@ -62,16 +55,13 @@ public class SecurityControllerTest {
                 .andDo(print())
                 .andExpect(status().is3xxRedirection());
     }
-
     @Test
     @Transactional
     public void 로그인_테스트_실패() throws Exception{
-        //given
         MemberLoginRequest request = MemberLoginRequest.builder()
                 .email("test@naver.com")
                 .password("12346")
                 .build();
-        //when
         mvc.perform(formLogin()
                         .userParameter("email")
                         .user(request.getEmail()).password(request.getPassword()))
@@ -79,7 +69,6 @@ public class SecurityControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/login?error"));
     }
-
     @WithMockUser
     @Test
     @Transactional
@@ -90,5 +79,4 @@ public class SecurityControllerTest {
                 .andExpect(redirectedUrl("/"))
                 .andExpect(unauthenticated());
     }
-
 }

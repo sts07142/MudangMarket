@@ -1,5 +1,4 @@
 package gachon.mudang.chat.service;
-
 import gachon.mudang.chat.dto.ChatDto;
 import gachon.mudang.product.domain.ProductCategory;
 import gachon.mudang.chat.domain.Chat;
@@ -20,15 +19,11 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
 @SpringBootTest
 class ChattingServiceTest {
-
     @Autowired MemberService memberService;
     @Autowired ChattingService chattingService;
     @Autowired EntityManager em;
-
-
     @Test
     @Transactional
     void 채팅_생성(){
@@ -47,14 +42,11 @@ class ChattingServiceTest {
         Assertions.assertThat(room.getChats().size()).isEqualTo(1);
         Assertions.assertThat(room.getLastChat().getContent()).isEqualTo("메시지");
     }
-
     @Test
     @Transactional
     void findChatRoomByMember(){
         List<ChatRoom> chatRoomByMember = chattingService.findChatRoomByMember("test@naver.com");
-//        chatRoomByMember.get(0).getProduct().getId();
     }
-
     public Long createMember(){
         Member member = MemberJoinRequest.builder()
                 .email(UUID.randomUUID().toString())
@@ -65,7 +57,6 @@ class ChattingServiceTest {
                 .build().toMemberEntity();
         return memberService.join(member);
     }
-
     public Long createProduct(){
         Member seller = memberService.findOne(createMember());
         Product product = ProductRegisterRequest.builder()
@@ -79,5 +70,4 @@ class ChattingServiceTest {
         em.persist(product);
         return product.getId();
     }
-
 }

@@ -16,10 +16,8 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest
 @Transactional
 public class ProductDomainTest {
-
     @Autowired EntityManager em;
     @Autowired MemberRepository memberRepository;
-
     @Test
     void 상품_생성(){
         // 회원 생성
@@ -30,23 +28,13 @@ public class ProductDomainTest {
                 .price(2000)
                 .category(ProductCategory.GAME_HOBBIES.getValue())
                 .content("상품 정보").build().toProductEntity();
-        // 연관관계 편의 메서드 실행
         product.addProduct(seller);
         em.persist(product);
-        // 상품 DB 저장
         Long productId = product.getId();
-        // 테스트
         Product findProduct = em.find(Product.class, productId);
         assertThat(findProduct).isEqualTo(product);
         assertThat(findProduct.getSeller()).isEqualTo(seller);
     }
-
-//    @Test
-//    void 판매자_상품_조회(){
-//        Member member = memberRepository.findByEmail("test@naver.com").get();
-//        System.out.println(member.getProducts());
-//    }
-
     Long createMember(){
         Member member = MemberJoinRequest.builder()
                 .email("test@naver.com")
