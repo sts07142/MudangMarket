@@ -14,6 +14,7 @@ public class MemberUpdateRequest {
     private MultipartFile profile;
     private String nickName;
 
+    // Member Update Request
     @Builder
     public MemberUpdateRequest(@Nullable MultipartFile profile, String nickName) {
         this.profile = profile;
