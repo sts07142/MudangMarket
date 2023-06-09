@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MudangMarketApplication {
 
 	public static void main(String[] args) {
+		// Start the Mudang Market application by running the Spring Boot application
 		SpringApplication.run(MudangMarketApplication.class, args);
 	}
 

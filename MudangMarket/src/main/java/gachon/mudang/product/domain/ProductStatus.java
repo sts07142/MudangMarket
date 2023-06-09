@@ -12,4 +12,5 @@ public enum ProductStatus {
 
     private String value;
 
+    // Constructor for ProductStatus enum
 }

@@ -6,8 +6,8 @@ import lombok.*;
 import java.util.List;
 
 /**
- * 상품 상세조회 응답 DTO
- * */
+ * DTO for Product Details Response
+ */
 @Getter
 @Setter
 @Builder

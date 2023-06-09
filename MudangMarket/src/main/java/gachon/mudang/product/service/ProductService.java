@@ -8,6 +8,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
+/**
+ * Product Service Interface
+ */
 public interface ProductService {
     Long save(ProductRegisterRequest request, String email);
     Product findOne(Long id);

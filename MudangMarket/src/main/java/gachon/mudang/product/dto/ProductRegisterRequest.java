@@ -32,10 +32,10 @@ public class ProductRegisterRequest {
     }
 
     /**
-     * 상품 엔티티로 변환
-     * 상품 이미지가 비어있다면 예외 발생 및 로그 기록
+     * Convert to Product Entity
+     * If product images are empty, throw an exception and log the error.
      * @return Product Entity
-     * */
+     */
     public Product toProductEntity(){
         return Product.builder()
                 .title(getTitle())

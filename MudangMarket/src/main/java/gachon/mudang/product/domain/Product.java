@@ -71,11 +71,7 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     List<Interest> interests = new ArrayList<>();
 
-//    @Builder
-//    public Product(ProductStatus status) {
-//        this.status = status;
-//    }
-
+    // Constructor for creating a Product with basic information
     @Builder
     public Product(String title, String category, int price, String content) {
         this.title = title;
@@ -89,27 +85,26 @@ public class Product {
         this.date = TimeService.getPresentTime();
     }
 
-    // 연관관계 편의 메소드
+    // Convenience method for establishing the association between a product and a seller
     public void addProduct(Member seller){
         this.seller = seller;
         seller.getProducts().add(this);
     }
 
+    /* Business Logic */
 
-    /* 비즈니스 로직 */
-
-    // 상품 상태 변경
+    // Set the status of the product
     public void setStatus(ProductStatus status) {
         this.status = status;
     }
 
-    // 썸네일 등록
+    // Set the thumbnail of the product and update the associated product images
     public void setThumbnail(List<ProductImage> productImages) {
         this.thumbnail = productImages.get(0).getUrl();
         this.productImages = productImages;
     }
 
-    //상품 정보 변경
+    // Update the product information
     public Product update(Product product){
         title = product.getTitle();
         price = product.getPrice();
@@ -118,32 +113,34 @@ public class Product {
         return this;
     }
 
-    //관심 갯수 증가
+    // Increase the interest count of the product
     public void addInterestCount(){
         this.interestCount++;
     }
 
-    //관심 갯수 감소
+    // Decrease the interest count of the product
     public void reduceInterestCount(){
         this.interestCount--;
     }
 
-    //채팅 갯수 증가
+    // Increase the chatting count of the product
     public void addChattingCount(){
         this.chattingCount++;
     }
 
-    //채팅 갯수 감소
+    // Decrease the chatting count of the product
     public void reduceChattingCount(){
         this.chattingCount--;
     }
 
-    /* 조회 로직 */
+    /* Query Logic */
 
+    // Get the URLs of product images associated with the product
     public List<String> getProductImageUrl(){
         return productImages.stream().map(i -> i.getUrl()).collect(Collectors.toList());
     }
 
+    // Convert the product details to a response DTO for API output
     public ProductDetailsResponse toProductDetail(){
         return ProductDetailsResponse.builder()
                 .productImages(getProductImageUrl())

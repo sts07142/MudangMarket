@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a01e1b20-754f-4ebc-94ed-f7816b17beb9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MudangMarket/src/main/java/gachon/mudang/controller/InterestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MudangMarket/src/main/java/gachon/mudang/controller/InterestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/my-page/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/my-page/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/products/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/products/delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/products/update-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/MudangMarket/src/main/resources/templates/products/update-success.html" afterDir="false" />
-    </list>
+    <list default="true" id="a01e1b20-754f-4ebc-94ed-f7816b17beb9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +66,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -134,6 +127,7 @@
       <workItem from="1684998268200" duration="618000" />
       <workItem from="1685025002860" duration="1831000" />
       <workItem from="1685110518360" duration="9601000" />
+      <workItem from="1686318081427" duration="2527000" />
     </task>
     <servers />
   </component>

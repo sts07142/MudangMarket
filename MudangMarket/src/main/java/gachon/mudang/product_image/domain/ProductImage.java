@@ -36,8 +36,11 @@ public class ProductImage {
         product.getProductImages().add(this);
     }
 
-    /* 연관관계 편의 메서드 */
-    public void remove(){
+    /**
+     * Convenience method for managing the association with the product.
+     * Removes the product image from the product's list of images.
+     */
+    public void remove() {
         product.getProductImages().remove(this);
     }
 }

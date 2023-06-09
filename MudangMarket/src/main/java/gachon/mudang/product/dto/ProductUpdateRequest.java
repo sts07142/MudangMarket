@@ -11,12 +11,13 @@ import java.util.List;
 
 
 /**
- * 상품 수정 요청 DTO
- * */
+ * This DTO class represents a request to update a product.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 public class ProductUpdateRequest {
+
     private String title;
     private int price;
     private String content;
@@ -32,6 +33,11 @@ public class ProductUpdateRequest {
         this.productImages = productImages;
     }
 
+    /**
+     * Convert to Product Entity
+     * This method converts the ProductUpdateRequest object to a Product entity object.
+     * @return Product Entity
+     */
     public Product toProductEntity(){
         return Product.builder()
                 .title(this.getTitle())

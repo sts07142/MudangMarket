@@ -21,7 +21,7 @@ import static java.util.Arrays.stream;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final ProductImageService productImageService;
@@ -63,7 +63,7 @@ public class ProductServiceImpl implements ProductService{
     @Override
     @Transactional
     public void updateProduct(Long id, Product product) {
-//        productRepository.findById(id).get().update(product);
+        // Update the details of a product
         Product product_temp = productRepository.findById(id).get();
         product_temp.update(product);
         productRepository.save(product_temp);
@@ -72,17 +72,21 @@ public class ProductServiceImpl implements ProductService{
     @Override
     @Transactional
     public void updateProductStatus(Long id, ProductStatus status) {
+        // Update the status of a product
         productRepository.findById(id).get().setStatus(status);
     }
 
     @Override
     public List<ProductStatus> getChangeableProductStatus(ProductStatus status) {
+        // Get the list of changeable product statuses
         return stream(ProductStatus.values())
-                .filter((item) -> item != status).collect(Collectors.toList());
+                .filter((item) -> item != status)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public List<ProductImage> getProductImage(List<MultipartFile> productImages, Product product){
+    public List<ProductImage> getProductImage(List<MultipartFile> productImages, Product product) {
+        // Get the list of product images
         return productImages.stream()
                 .map((image) -> {
                     try {

@@ -24,4 +24,6 @@ public enum ProductCategory {
     USED_CAR("중고차");
 
     private String value;
+
+    // Constructor for ProductCategory enum
 }
