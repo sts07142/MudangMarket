@@ -13,6 +13,7 @@ public class MemberLoginRequest {
     private String email;
     private String password;
 
+    // Member Login Request
     @Builder
     public MemberLoginRequest(String email, String password) {
         this.email = email;

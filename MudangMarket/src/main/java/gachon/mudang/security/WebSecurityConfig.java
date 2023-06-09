@@ -12,6 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+
+// Responsible for security functions when logging in
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -46,8 +48,6 @@ public class WebSecurityConfig {
                 .logout((logout) -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                         .logoutSuccessUrl("/")
-//                        .invalidateHttpSession(true)
-//                        .deleteCookies("JSESSIONID")
                 )
                 .exceptionHandling()
                 .accessDeniedPage("/error");

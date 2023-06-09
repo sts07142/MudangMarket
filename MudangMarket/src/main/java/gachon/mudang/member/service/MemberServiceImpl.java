@@ -20,6 +20,7 @@ public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
+    // member join
     @Override
     @Transactional
     public Long join(Member member) {
@@ -28,28 +29,27 @@ public class MemberServiceImpl implements MemberService{
         return memberRepository.save(member).getId();
     }
 
+    // update member info
     @Override
     @Transactional
     public void update(Long memberId, MemberUpdateRequest request) throws IOException {
         Member member = findOne(memberId);
         member.updateNickName(request.getNickName());
-//        if(!request.getProfile().isEmpty()){
-//            // 수정필요
-////            String imageUrl = s3Uploader.getImageUrl(request.getProfile(), ImageStorageFolderName.MEMBER_IMAGE_PATH);
-//            member.updateProfile(imageUrl);
-//        }
     }
 
+    // find member with ID
     @Override
     public Member findOne(Long memberId){
         return memberRepository.findById(memberId).orElseThrow(() -> {throw new MemberNotFoundException();});
     }
 
+    // find member with email
     @Override
     public Member findMember(String email) {
         return memberRepository.findByEmail(email).orElseThrow(()->{throw new MemberNotFoundException();});
     }
 
+    // check member exist or not
     @Override
     public void existMemberCheck(String email){
         if(memberRepository.findByEmail(email).isPresent()) throw new MemberEmailDuplicateException();

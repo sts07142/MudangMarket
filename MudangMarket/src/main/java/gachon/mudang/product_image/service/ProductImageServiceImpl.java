@@ -6,9 +6,10 @@ import gachon.mudang.product_image.domain.ProductImage;
 import gachon.mudang.product_image.repository.ProductImageRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 
+
+// Implementation method of product image
 @Service
 @RequiredArgsConstructor
 public class ProductImageServiceImpl implements ProductImageService {

@@ -13,6 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class ProductImage {
 
+    // Constructor
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -28,6 +29,7 @@ public class ProductImage {
     @JoinColumn(name = "product_id")
     private Product product;
 
+    // Image constructor
     @Builder
     public ProductImage(String url, String fileName, Product product) {
         this.url = url;
@@ -36,11 +38,12 @@ public class ProductImage {
         product.getProductImages().add(this);
     }
 
+
     /**
      * Convenience method for managing the association with the product.
      * Removes the product image from the product's list of images.
      */
-    public void remove() {
+    public void remove(){
         product.getProductImages().remove(this);
     }
 }

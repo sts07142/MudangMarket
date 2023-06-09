@@ -26,6 +26,7 @@ public class MemberJoinRequest {
     @NotEmpty(message = "닉네임 입력은 필수 입니다.")
     private String nickname;
 
+    // Member Join Request
     @Builder
     public MemberJoinRequest(String email, String password, String name, String phone, String nickname) {
         this.email = email;
@@ -36,7 +37,7 @@ public class MemberJoinRequest {
     }
 
     /*
-    * 회원 엔티티로 변환
+    * Convert to Member entity
     * */
     public Member toMemberEntity(){
         return Member.builder()

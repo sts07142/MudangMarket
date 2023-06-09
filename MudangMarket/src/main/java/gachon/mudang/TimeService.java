@@ -2,6 +2,8 @@ package gachon.mudang;
 
 import java.time.*;
 
+// time function
+// Display time when registering a post
 public class TimeService {
 
     public static ZonedDateTime getPresentTime() {
