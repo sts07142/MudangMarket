@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
+// functions of product image
 public interface ProductImageService {
     ProductImage save(ProductImage productImage);
     ProductImage convert(MultipartFile multipartFile, Product product) throws IOException;
