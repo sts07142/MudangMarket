@@ -15,11 +15,11 @@
 - 프론트엔드 : HTML, CSS, Thymeleaf
 - 백엔드 : Spring, Springboot, Spring Security
 
-## ERD 다이어그램
+## ERD 다이어그램s
 <img src="https://github.com/Hyunstone/software_engineering/assets/96871857/836d82ed-9edc-466b-9078-04fd9e08f349">
 
 ## 엔티티 관계도
-<img src="D:\23-1학기\5. 소프트웨어공학\Term project\Class diagram.png">
+<img src="https://github.com/Hyunstone/software_engineering/assets/96871857/b3aab1c3-f78a-41a9-9952-67bd42cf4bf2">
 
 ## 기능
 ### 1. 회원가입 및 로그인 기능
