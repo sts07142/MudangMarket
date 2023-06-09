@@ -8,7 +8,7 @@
 - 스프링 부트 버전 : 2.7.7
 - 데이터 베이스 : H2 Database
 - 빌드 툴 : Gradle
-- 관리 툴 : Git, GitHub
+- 관리 툴 : GitHub
 
 
 #### 기술 스택
@@ -16,10 +16,10 @@
 - 백엔드 : Spring, Springboot, Spring Security
 
 ## ERD 다이어그램
-
+<img src="D:\23-1학기\5. 소프트웨어공학\Term project\ERD diagram.png">
 
 ## 엔티티 관계도
-
+<img src="D:\23-1학기\5. 소프트웨어공학\Term project\Class diagram.png">
 
 ## 기능
 ### 1. 회원가입 및 로그인 기능
@@ -41,3 +41,5 @@
 - 관심 목록 조회(내가 하트를 누른 판매 상품 목록)
 
 ### 5. 1:1 채팅 기능
+- 채팅 기능
+- 상대방의 메세지 확인 가능
