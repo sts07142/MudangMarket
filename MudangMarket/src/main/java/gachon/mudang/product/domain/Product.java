@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static java.util.Arrays.stream;
-
 @Entity
 @Getter
 @Table(name = "product")
@@ -72,6 +70,11 @@ public class Product {
 
     @OneToMany(mappedBy = "product", cascade = {CascadeType.REMOVE, CascadeType.PERSIST})
     List<Interest> interests = new ArrayList<>();
+
+//    @Builder
+//    public Product(ProductStatus status) {
+//        this.status = status;
+//    }
 
     @Builder
     public Product(String title, String category, int price, String content) {

@@ -63,16 +63,20 @@ public class ProductServiceImpl implements ProductService{
     @Override
     @Transactional
     public void updateProduct(Long id, Product product) {
-        productRepository.findById(id).get().update(product);
+//        productRepository.findById(id).get().update(product);
+        Product product_temp = productRepository.findById(id).get();
+        product_temp.update(product);
+        productRepository.save(product_temp);
     }
 
     @Override
+    @Transactional
     public void updateProductStatus(Long id, ProductStatus status) {
         productRepository.findById(id).get().setStatus(status);
     }
 
     @Override
-    public List<ProductStatus> getChangeableProductStatus(ProductStatus status){
+    public List<ProductStatus> getChangeableProductStatus(ProductStatus status) {
         return stream(ProductStatus.values())
                 .filter((item) -> item != status).collect(Collectors.toList());
     }

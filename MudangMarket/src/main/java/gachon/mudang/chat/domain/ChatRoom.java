@@ -30,7 +30,7 @@ public class ChatRoom {
     @JoinColumn(name = "buyer_id")
     private Member buyer;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "chatRoom", fetch = FetchType.LAZY)
     private List<Chat> chats = new ArrayList<>();
 
     public ChatRoom() {

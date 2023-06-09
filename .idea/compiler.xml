@@ -10,9 +10,9 @@
         <module name="mudangmarket.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mudangmarket.main" target="11" />
-      <module name="mudangmarket.test" target="11" />
+    <bytecodeTargetLevel target="11">
+      <module name="MudangMarket.main" target="11" />
+      <module name="MudangMarket.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>에러페이지</title>
+    <script>
+        function showAlertAndGoBack() {
+            alert("에러가 발생하였습니다.");
+            window.history.back();
+        }
+
+        window.onload = showAlertAndGoBack;
+    </script>
 </head>
 <body>
-<h1>에러가 발생하였습니다</h1>
 </body>
 </html>

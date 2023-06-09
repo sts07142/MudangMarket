@@ -26,7 +26,7 @@ public class ProductImageServiceImpl implements ProductImageService{
 
 //        String url = findByUrl.
         return ProductImage.builder()
-//                .url(url)
+                .url("https://i.ibb.co/7r2cJ4W/Kakao-Talk-20230525-224725973.png")
 //                // .fileName을 변경 필요
 //                .fileName(url)
                 .product(product)

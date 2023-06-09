@@ -3,7 +3,6 @@ package gachon.mudang.image_upload.service;
 import gachon.mudang.image_upload.controller.FileHandler;
 import gachon.mudang.image_upload.entity.Board;
 import gachon.mudang.image_upload.repository.BoardRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,7 +17,6 @@ public class BoardService {
 
     private final FileHandler fileHandler;
 
-    @Autowired
     public BoardService(BoardRepository boardRepository) {
         this.boardRepository = boardRepository;
         this.fileHandler = new FileHandler();

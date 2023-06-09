@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
     height: 52px;
 }
 .header-bar a{
-    text-align: center;
+  text-align: center;
   height: 32px;
   min-width: 88px;
   padding: 10px;
@@ -61,7 +61,8 @@ body::-webkit-scrollbar {
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 5px;
+  display: flex;
+  align-items: center;
 }
 .profile-div {
     width: 100%;

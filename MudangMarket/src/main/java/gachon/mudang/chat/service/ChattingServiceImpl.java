@@ -41,6 +41,9 @@ public class ChattingServiceImpl implements ChattingService{
         ChatRoom chatRoom = chatRoomRepository.findById(chatDto.getRoomId()).get();
         Chat chat = chatDto.toEntity(chatRoom);
         chatRepository.save(chat);
+        System.out.println("이거 보자 " + chatDto.toString());
+        System.out.println("이거 보자 " + chatRoom.getId());
+        System.out.println("이거 보자 " + chat.getId());
         return chat.getId();
     }
 
@@ -70,4 +73,5 @@ public class ChattingServiceImpl implements ChattingService{
         }
         return findChatRoom.get();
     }
+
 }

@@ -6,9 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>무당마켓</title>
+    <script>
+        window.onload = function() {
+            history.back();
+        };
+    </script>
 </head>
 <body>
-<h1 th:text="${'관심 목록에 ' + state + '되었습니다.'}">관심 목록에 추가/삭제 되었습니다</h1>
-<a href="javascript:history.back(-1)">뒤로가기</a>
+<!--<h1 th:text="${'관심 목록에 ' + state + '되었습니다.'}">관심 목록에 추가/삭제 되었습니다</h1>-->
+<!--<a href="javascript:history.back(-1)">뒤로가기</a>-->
 </body>
 </html>
