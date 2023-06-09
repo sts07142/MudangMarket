@@ -6,7 +6,7 @@
 - 통합개발환경(IDE) : IntelliJ
 - JDK 버전 : JDK 11
 - 스프링 부트 버전 : 2.7.7
-- 데이터 베이스 : MySQL
+- 데이터 베이스 : H2 Database
 - 빌드 툴 : Gradle
 - 관리 툴 : Git, GitHub
 
