@@ -16,10 +16,10 @@
 - 백엔드 : Spring, Springboot, Spring Security
 
 ## ERD 다이어그램
-<img src="https://github.com/Hyunstone/software_engineering/assets/96871857/836d82ed-9edc-466b-9078-04fd9e08f349">
+![image](src/main/resources/static/images/ERD_diagram.png)
 
 ## 엔티티 관계도
-<img src="https://github.com/Hyunstone/software_engineering/assets/96871857/b3aab1c3-f78a-41a9-9952-67bd42cf4bf2">
+![image](src/main/resources/static/images/Class_diagram.png)
 
 ## 기능
 ### 1. 회원가입 및 로그인 기능
