@@ -4,19 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a01e1b20-754f-4ebc-94ed-f7816b17beb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MudangMarket/src/main/resources/static/images/Class_diagram.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MudangMarket/src/main/resources/static/images/ERD_diagram.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MudangMarket/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/MudangMarket/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="31d220e1-fc7f-4fc0-85c3-3eb7573fe40c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$/MudangMarket">
+    <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
@@ -25,142 +20,82 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MudangMarket" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="10d0c007-8e6c-4197-b9b2-486a78dfd14b" />
-        <option name="url" value="https://github.com/Hyunstone/software_engineering.git" />
-      </UrlAndAccount>
-    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2QAVRHg3mKFlzoBoy1GPXFJFXv3" />
+  <component name="ProjectId" id="2QHvnFJ3O2IL3mnAYa144qob6Gy" />
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/승원/IdeaProjects/software_engineering/MudangMarket/src/main/resources/static/images",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "1d3324e8ee43d5cfa394a014fa2bc870",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/hyun1/Desktop/software_engineering/MudangMarket&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7f1580a010f871b617d0875ddfb9343c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\승원\IdeaProjects\software_engineering\MudangMarket\src\main\resources\static\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\승원\IdeaProjects\software_engineering\MudangMarket\src\main\resources\static\images" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="MudangMarket" />
-      <command value="no-mobile" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.MudangMarketApplication">
+}</component>
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
-      <module name="MudangMarket" />
+      <module name="MudangMarket.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="MudangMarket" />
+      <module name="MudangMarket.main" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MudangMarketApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="MudangMarketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="MudangMarket.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="gachon.mudang.MudangMarketApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MudangMarketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="MudangMarket" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="gachon.mudang.MudangMarketApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gachon.mudang.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
-        <option name="credential" />
-        <option name="region" />
-        <option name="useCurrentConnection" value="false" />
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.MudangMarketApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a01e1b20-754f-4ebc-94ed-f7816b17beb9" name="Changes" comment="" />
-      <created>1684796363397</created>
+      <changelist id="31d220e1-fc7f-4fc0-85c3-3eb7573fe40c" name="Changes" comment="" />
+      <created>1685023489610</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1684796363397</updated>
-      <workItem from="1684796365848" duration="7582000" />
-      <workItem from="1684821325793" duration="45000" />
-      <workItem from="1684842752212" duration="7000" />
-      <workItem from="1684972348604" duration="369000" />
-      <workItem from="1684998268200" duration="618000" />
-      <workItem from="1685025002860" duration="1831000" />
-      <workItem from="1685110518360" duration="10378000" />
-      <workItem from="1685129667431" duration="20000" />
-      <workItem from="1686316191879" duration="3149000" />
+      <updated>1685023489610</updated>
+      <workItem from="1685023490392" duration="15174000" />
+      <workItem from="1685069306984" duration="1520000" />
+      <workItem from="1685072820887" duration="692000" />
+      <workItem from="1686315927653" duration="26000" />
+      <workItem from="1686316127123" duration="3092000" />
     </task>
     <servers />
   </component>
